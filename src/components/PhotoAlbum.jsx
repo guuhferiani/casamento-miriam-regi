@@ -17,10 +17,11 @@ import img159 from '../assets/M_R-159.jpg';
 import img176 from '../assets/M_R-176.webp';
 import img180 from '../assets/M_R-180.jpg';
 import img141 from '../assets/M_R-141.jpg';
+import img181 from '../assets/M_R-181.jpeg';
 
 const PhotoAlbum = () => {
   const images = [
-    img8, img20, img26, img28, img39, img48, img50, img73, img88, img89, img103, img159, img176, img180, img141
+    img8, img20, img26, img28, img39, img48, img50, img73, img88, img89, img103, img159, img176, img180, img141, img181
   ];
 
   const [activeIdx, setActiveIdx] = useState(null);
