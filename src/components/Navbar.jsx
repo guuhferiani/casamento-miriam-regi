@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm py-4`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 py-4 bg-transparent md:bg-white/95 md:backdrop-blur-md md:shadow-sm`}>
       <div className="max-w-6xl mx-auto px-4 md:px-8 flex justify-center items-center">
         
         {/* Desktop Menu */}
@@ -33,10 +33,10 @@ const Navbar = () => {
         {/* Mobile Menu Toggle */}
         <div className="md:hidden w-full flex justify-end">
           <button 
-            className="text-navy focus:outline-none"
+            className="text-white md:text-navy focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen ? <X size={28} className="text-white md:text-navy" /> : <Menu size={28} />}
           </button>
         </div>
       </div>
