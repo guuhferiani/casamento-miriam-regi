@@ -96,37 +96,37 @@ const Hero = () => {
       {/* Manual Slide Navigation Arrows */}
       <button
         onClick={handlePrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white transition-all backdrop-blur-sm active:scale-95"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-30 text-white/60 hover:text-white transition-all active:scale-95"
         aria-label="Foto anterior"
       >
-        <ChevronLeft size={24} />
+        <ChevronLeft size={36} />
       </button>
       <button
         onClick={handleNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/25 text-white transition-all backdrop-blur-sm active:scale-95"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-30 text-white/60 hover:text-white transition-all active:scale-95"
       >
-        <ChevronRight size={24} />
+        <ChevronRight size={36} />
       </button>
 
       {/* Main Content Area */}
-      <div className="relative z-30 max-w-4xl mx-auto px-4 py-24 text-center flex flex-col items-center justify-center min-h-screen">
+      <div className="relative z-30 max-w-4xl mx-auto px-4 py-16 md:py-24 text-center flex flex-col items-center justify-center min-h-screen">
         
         {/* Intro tag */}
-        <div className="mb-6 animate-fade-in-up">
-          <p className="font-sans text-xs md:text-sm text-blue-accent uppercase tracking-[0.3em] font-semibold">
+        <div className="mb-3 md:mb-6 animate-fade-in-up">
+          <p className="font-sans text-xs md:text-base lg:text-lg text-white uppercase tracking-[0.3em] font-semibold">
             Bem-vindo ao nosso casamento
           </p>
         </div>
 
         {/* Couple Names */}
-        <div className="mb-10 animate-fade-in-up">
-          <h1 className="font-cursive text-7xl md:text-[8rem] text-white leading-none tracking-wide drop-shadow-md">
+        <div className="mb-6 md:mb-10 animate-fade-in-up">
+          <h1 className="font-cursive text-5xl sm:text-7xl md:text-[8rem] text-white leading-none tracking-wide drop-shadow-md">
             Miriam & Reginaldo
           </h1>
         </div>
 
         {/* Date and Location Badge */}
-        <div className="mb-12 flex flex-col items-center animate-fade-in-up">
+        <div className="mb-8 md:mb-12 flex flex-col items-center animate-fade-in-up">
           <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/15 shadow-md">
             <CalendarDays className="w-5 h-5 text-blue-accent" />
             <span className="font-sans text-sm md:text-base text-white font-medium tracking-wide">
@@ -136,7 +136,7 @@ const Hero = () => {
         </div>
 
         {/* Active Countdown Timer */}
-        <div className="mb-14 w-full max-w-xl animate-fade-in-up">
+        <div className="mb-8 md:mb-14 w-full max-w-xl animate-fade-in-up">
           <div className="grid grid-cols-4 gap-2 md:gap-4">
             {[
               { label: 'Dias', value: timeLeft.dias },

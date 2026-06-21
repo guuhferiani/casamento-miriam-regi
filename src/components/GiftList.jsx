@@ -6,13 +6,13 @@ const GiftList = () => {
   return (
     <section id="presentes" className="py-24 px-4 bg-paper relative overflow-hidden">
       {/* Decorative Flowers */}
-      <div className="absolute -left-20 -bottom-20 w-64 h-64 opacity-20 pointer-events-none transform rotate-45">
+      <div className="absolute -left-20 -bottom-20 w-64 h-64 opacity-20 pointer-events-none transform rotate-45 z-0">
         <img src={flowers} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="absolute -right-20 -top-20 w-64 h-64 opacity-20 pointer-events-none transform -rotate-90">
+      <div className="absolute -right-20 -top-20 w-64 h-64 opacity-20 pointer-events-none transform -rotate-90 z-0">
         <img src={flowers} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="max-w-4xl mx-auto text-center">
+      <div className="max-w-4xl mx-auto text-center relative z-10">
         <h2 className="font-cursive text-5xl md:text-6xl text-blue-accent mb-6">Lista de Presentes</h2>
         <p className="font-sans text-navy/80 font-light text-lg mb-12 max-w-2xl mx-auto">
           Sua presença é o nosso maior presente! Mas se desejar nos presentear, 

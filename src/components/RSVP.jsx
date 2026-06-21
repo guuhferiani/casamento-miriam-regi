@@ -85,10 +85,10 @@ const RSVP = () => {
   return (
     <section id="rsvp" className="py-24 px-4 bg-white relative overflow-hidden">
       {/* Decorative Flowers */}
-      <div className="absolute -left-20 top-10 w-64 h-64 opacity-20 pointer-events-none transform rotate-12">
+      <div className="absolute -left-20 top-10 w-64 h-64 opacity-20 pointer-events-none transform rotate-12 z-0">
         <img src={flowers} alt="" className="w-full h-full object-contain" />
       </div>
-      <div className="absolute -right-20 bottom-10 w-64 h-64 opacity-20 pointer-events-none transform -rotate-45">
+      <div className="absolute -right-20 bottom-10 w-64 h-64 opacity-20 pointer-events-none transform -rotate-45 z-0">
         <img src={flowers} alt="" className="w-full h-full object-contain" />
       </div>
 
