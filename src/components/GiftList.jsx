@@ -1,8 +1,18 @@
-import React from 'react';
-import { Gift, Plane, Copy } from 'lucide-react';
+import React, { useState } from 'react';
+import { Gift, Plane, Copy, Check } from 'lucide-react';
 import flowers from '../assets/flowers_optimized.webp';
 
 const GiftList = () => {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('11969677883');
+    setCopied(true);
+    setTimeout(() => {
+      setCopied(false);
+    }, 2500);
+  };
+
   return (
     <section id="presentes" className="py-24 px-4 bg-paper relative overflow-hidden">
       {/* Decorative Flowers */}
@@ -36,14 +46,24 @@ const GiftList = () => {
             </div>
             
             <button 
-              onClick={() => {
-                navigator.clipboard.writeText('11969677883');
-                alert('Chave PIX copiada!');
-              }}
-              className="w-full flex items-center justify-center space-x-2 bg-blue-accent/10 hover:bg-blue-accent/20 text-blue-accent font-sans font-medium uppercase tracking-wide text-sm py-3 rounded-lg transition-colors"
+              onClick={handleCopy}
+              className={`w-full flex items-center justify-center space-x-2 font-sans font-medium uppercase tracking-wide text-sm py-3 rounded-lg transition-all duration-300 ${
+                copied 
+                  ? 'bg-green-500/10 text-green-700 border border-green-500/20' 
+                  : 'bg-blue-accent/10 hover:bg-blue-accent/20 text-blue-accent'
+              }`}
             >
-              <Copy className="w-4 h-4" />
-              <span>Copiar Chave PIX</span>
+              {copied ? (
+                <>
+                  <Check className="w-4 h-4" />
+                  <span>Chave Copiada!</span>
+                </>
+              ) : (
+                <>
+                  <Copy className="w-4 h-4" />
+                  <span>Copiar Chave PIX</span>
+                </>
+              )}
             </button>
           </div>
 
