@@ -15,6 +15,15 @@ const RSVP = () => {
   const [status, setStatus] = useState('confirmado'); // 'confirmado' or 'recusado'
   const [message, setMessage] = useState('');
 
+  const handleInputChange = (e) => {
+    const value = e.target.value;
+    setSearchName(value);
+    if (!value.trim()) {
+      setGuests([]);
+      setError(null);
+    }
+  };
+
   const handleSearch = async (e) => {
     e.preventDefault();
     if (!searchName.trim()) return;
@@ -116,7 +125,7 @@ const RSVP = () => {
                       type="text" 
                       id="search-name" 
                       value={searchName}
-                      onChange={(e) => setSearchName(e.target.value)}
+                      onChange={handleInputChange}
                       className="w-full bg-white border border-gray-200 rounded-xl pl-4 pr-12 py-4 text-navy focus:outline-none focus:ring-2 focus:ring-blue-accent/30 focus:border-blue-accent transition-all font-sans text-base"
                       placeholder="Ex: João da Silva"
                       required
