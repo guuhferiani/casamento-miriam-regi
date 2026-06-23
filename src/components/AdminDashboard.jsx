@@ -368,13 +368,13 @@ const AdminDashboard = () => {
             { label: 'Recusaram', value: declined, icon: XCircle, color: 'text-red-700 bg-red-500/10' },
             { label: 'Pendentes', value: pending, icon: HelpCircle, color: 'text-yellow-700 bg-yellow-500/10' },
           ].map((stat, idx) => (
-            <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-4">
-              <div className={`p-3.5 rounded-xl ${stat.color}`}>
-                <stat.icon size={24} />
+            <div key={idx} className="bg-white p-3.5 sm:p-5 md:p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center space-x-2.5 sm:space-x-4">
+              <div className={`p-2 sm:p-3 rounded-xl ${stat.color} shrink-0`}>
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-current" />
               </div>
-              <div>
-                <p className="text-xs text-navy/50 uppercase tracking-wider font-semibold">{stat.label}</p>
-                <p className="text-2xl font-bold text-navy mt-0.5">{loading ? '...' : stat.value}</p>
+              <div className="min-w-0">
+                <p className="text-[10px] sm:text-xs text-navy/50 uppercase tracking-wider font-semibold leading-tight">{stat.label}</p>
+                <p className="text-xl sm:text-2xl font-bold text-navy mt-0.5">{loading ? '...' : stat.value}</p>
               </div>
             </div>
           ))}
