@@ -7,13 +7,21 @@ import RSVP from './components/RSVP';
 import GiftList from './components/GiftList';
 import Tips from './components/Tips';
 import Dashboard from './components/Dashboard';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [route, setRoute] = useState('home'); // 'home', 'painel', 'admin'
 
   useEffect(() => {
     const checkHash = () => {
-      setIsAdmin(window.location.hash === '#/painel' || window.location.hash === '#painel');
+      const hash = window.location.hash;
+      if (hash === '#/painel' || hash === '#painel') {
+        setRoute('painel');
+      } else if (hash === '#/admin' || hash === '#admin') {
+        setRoute('admin');
+      } else {
+        setRoute('home');
+      }
     };
 
     checkHash();
@@ -21,8 +29,12 @@ function App() {
     return () => window.removeEventListener('hashchange', checkHash);
   }, []);
 
-  if (isAdmin) {
+  if (route === 'painel') {
     return <Dashboard />;
+  }
+
+  if (route === 'admin') {
+    return <AdminDashboard />;
   }
 
   return (
